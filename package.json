@@ -1,0 +1,12 @@
+{
+  "name": "repository-review-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Git repository inventory, milestone review and redacted privacy findings.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "audit": "node src/cli.mjs audit"
+  }
+}
