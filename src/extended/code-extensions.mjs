@@ -1,0 +1,3 @@
+const groups = { javascript: ['js','mjs','cjs','jsx'], typescript: ['ts','tsx'], python: ['py'], go: ['go'], rust: ['rs'], java: ['java'], c: ['c','h'], cpp: ['cpp','hpp','cc'], csharp: ['cs'], ruby: ['rb'], php: ['php'], swift: ['swift'], kotlin: ['kt'], scala: ['scala'], sql: ['sql'], shell: ['sh','ps1'], vue: ['vue'], svelte: ['svelte'], prisma: ['prisma'] };
+export const extensions = Object.freeze(Object.fromEntries(Object.entries(groups).flatMap(([language, suffixes]) => suffixes.map(suffix => ['.' + suffix, language]))));
+export function sourceLanguage(path) { const name = path.replaceAll('\\', '/').split('/').at(-1); const dot = name.lastIndexOf('.'); return dot >= 0 ? extensions[name.slice(dot).toLowerCase()] || null : null; }
